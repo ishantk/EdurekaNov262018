@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+     <!-- Configure Your Object like below: -->
+    
+   <!-- <bean id="cRef1" class="co.edureka.bean.Connection" scope="prototype"> -->
+   <!-- <bean id="cRef1" class="co.edureka.bean.Connection" init-method="myInit" destroy-method="myDestroy">
+       <property name="driver" value="com.mysql.jdbc.Driver"/>
+       <property name="url" value="jdbc:mysql://localhost/mydb"/>
+       <property name="username" value="fionna"/>
+       <property name="password" value="fionna123"/>
+   </bean> -->
+   
+   <!-- Telling IOC Container to create Object of PostProcessor -->
+  <!--  <bean class="co.edureka.bean.PostProcessor"/> -->
+   
+   <!--  <bean id="cRef2" class="co.edureka.bean.Connection" scope="prototype">
+       <property name="driver" value="com.mysql.jdbc.Driver"/>
+       <property name="url" value="jdbc:mysql://localhost/yourdb"/>
+       <property name="username" value="sia"/>
+       <property name="password" value="sia123"/>
+   </bean> -->
+   
+   <!-- <bean id="pRef" class="co.edureka.bean.Product">
+       <property name="pid" value="1001"/>
+       <property name="name" value="Some Product"/>
+       <property name="brand" value="Apple"/>
+       <property name="price" value="35000"/>
+   </bean> 
+   
+    <bean id="mRef" class="co.edureka.bean.MobilePhone" parent="pRef">
+       <property name="name" value="iPhoneX"/>
+       <property name="price" value="80000"/>
+       <property name="os" value="iOS"/>
+       <property name="ram" value="4"/>
+       <property name="memory" value="128"/>
+   </bean>  -->
+   
+   <bean id="aRef" class="co.edureka.bean.Address">
+       <property name="adrsLine" value="Pristine Magnum"/>
+       <property name="city" value="Bengaluru"/>
+       <property name="zipCode" value="520001"/>
+   </bean> 
+   
+   <bean id="cRef" class="co.edureka.bean.Customer">
+       <property name="name" value="Fionna Flynn"/>
+       <property name="phone" value="+91 99999 88888"/>
+       <property name="email" value="fionna@example.com"/>
+       <!-- <constructor-arg name="address" ref="aRef"/> -->   <!-- Constructor Injection -->
+       <property name="address" ref="aRef"/>				   <!-- Setter Injection -->
+       
+       <!-- Collection Injection -->
+       <property name="phoneNumbers">
+	       	<list>
+	       		<value>+91 99999 88888</value>
+	       		<value>+91 99999 77777</value>
+	       		<value>+91 77777 88888</value>
+	       		<value>+91 88888 66666</value>
+	       		<value>+91 99999 55555</value>
+	       	</list>
+       </property>
+    </bean>   
+
+</beans>

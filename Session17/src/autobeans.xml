@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+    <!-- Configure Your Object like below: -->
+  	
+  	<bean id="ca" class="co.edureka.bean.CA"/>
+  	
+  	<!-- Even CB has an attribute ca we shall not link dependency here. We will use Annotations !! -->
+  	<bean id="cb" class="co.edureka.bean.CB"/>
+  	
+  	<!-- <bean id="cb" class="co.edureka.bean.CB">
+  		<constructor-arg name="ca" ref="ca"/>
+  		<property name="ca" ref="ca"/>
+  	</bean> -->
+  	
+  	<!-- To Use Annotation -->
+  	<context:annotation-config/>
+       
+
+</beans>
